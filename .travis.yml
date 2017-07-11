@@ -1,11 +1,12 @@
 language: java
 jdk:
  - oraclejdk8
+before_script:
+ - bundle exec danger
 after_success:
   - bash <(curl -s https://codecov.io/bash)
 language: ruby
 rvm:
-- 2.4.1
-script:
- - bundle install
- - bundle exec danger
+- 2.0.0
+
+
