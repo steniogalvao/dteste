@@ -2,5 +2,5 @@
 source "https://rubygems.org"
 gem 'danger'
 
-ruby '2.0.0'
+ruby '2.4.1'
 # gem "rails"
