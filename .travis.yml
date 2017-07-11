@@ -4,8 +4,6 @@ jdk:
 language: ruby
 rvm:
 - 2.4.1
-before_script:
- - bundle exec danger
 after_success:
   - bash <(curl -s https://codecov.io/bash)
 
