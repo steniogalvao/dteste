@@ -9,7 +9,9 @@ public class App
     public static void main( String[] args )
     {
         System.out.println( "Hello World!" );
-        System.out.println( "Testing travis and danger!" );
+        System.out.println( "asd!" );
+        System.out.println( "asd!" );
+        System.out.println( "asd!" );
         
     }
 }
