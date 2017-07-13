@@ -6,7 +6,7 @@ has_test_changes = !git.modified_files.grep(/src/test/java).empty?
 
 # Alertando sobre a importancia dos testes
 if has_app_changes && !has_test_changes
-    warn "Talvez você deva alterar/implementar testes para as suas alterções."    
+    warn ("Talvez você deva alterar/implementar testes para as suas alterções.")    
 end
 
 # Warn when there is a big PR
