@@ -1,7 +1,7 @@
 # boolean para verificar se ocorreram mudanças na aplicação
-has_app_changes = !git.modified_files.grep(src/main/java).empty?
+has_app_changes = !git.modified_files.grep(/src/main/java).empty?
 # boolean para verificar se ocorreram mudanças nos testes
-has_test_changes = !git.modified_files.grep(src/test/java).empty?
+has_test_changes = !git.modified_files.grep(/src/test/java).empty?
 
 
 # Alertando sobre a importancia dos testes
