@@ -1,13 +1,17 @@
-# Sometimes it's a README fix, or something like that - which isn't relevant for
-# including in a project's CHANGELOG for example
-declared_trivial = github.pr_title.include? "#trivial"
+# boolean para verificar se ocorreram mudanças na aplicação
+#has_app_changes = !(git.modified_files.grep(/src/main/java/).empty?)
+has_app_changes = !(git.modified_files.grep("/src/main/java/br/com/vsgdev/dtest").empty?)
+# boolean para verificar se ocorreram mudanças nos testes
+#has_test_changes = !git.modified_files.grep(/src/test/java/).empty?
 
-# Make it more obvious that a PR is a work in progress and shouldn't be merged yet
-warn("PR is classed as Work in Progress") if github.pr_title.include? "[WIP]"
+
+# Alertando sobre a importancia dos testes
+if has_app_changes
+    warn ("Talvez você deva alterar/implementar testes para as suas alterções.")    
+end
 
 # Warn when there is a big PR
-warn("Big PR") if git.lines_of_code > 500
+warn("Big PR") if git.lines_of_code > 1
 
-# Don't let testing shortcuts get into master by accident
-fail("fdescribe left in tests") if `grep -r fdescribe specs/ `.length > 1
-fail("fit left in tests") if `grep -r fit specs/ `.length > 1
+warn("Just testing a damn warning")
+
